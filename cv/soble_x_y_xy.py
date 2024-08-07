@@ -1,0 +1,11 @@
+import cv2
+image=cv2.imread(r"C:\Users\91934\Documents\computervision\kholi.jpeg")
+gi=cv2.cvtColor(image,cv2.COLOR_BGR2GRAY)
+gb=cv2.GaussianBlur(gi,(5,5),0)
+sobel_x=cv2.Sobel(gi,cv2.CV_64F,dx=1,dy=0,ksize=5)
+sobel_y=cv2.Sobel(gi,cv2.CV_64F,dx=0,dy=1,ksize=5)
+sobel_xy=cv2.Sobel(gi,cv2.CV_64F,dx=1,dy=1,ksize=5)
+cv2.imshow("soble_x",sobel_x)
+cv2.imshow("sobel_y",sobel_y)
+cv2.imshow("soble_xy",sobel_xy)
+cv2.waitkey(0)
